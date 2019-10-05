@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import cardBack from './cardBack.jpg'
+import Nav from './components/Nav/Nav'
+const placeHolders = {
+  display: cardBack
+  
+}
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      user: null,
+      Display: cardBack
+    }
+  }
+  
+  render(){
+    return (
+      <div className="App">
+        <Nav />
+        <img src={this.state.Display}></img>
+
+      </div>
+    );
+  }
 }
 
 export default App;
