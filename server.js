@@ -10,6 +10,10 @@ app.use(express.json());
 
 app.use(express.json());
 
+
+require('dotenv').config();
+require('./config/database');
+
 // Configure both serve-favicon & static middlewares
 // to serve from the production 'build' folder
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
