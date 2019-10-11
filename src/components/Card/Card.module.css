@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: center;
 }
-.cardOpt > a{
+.cardOpt > button{
     color: aliceblue;
     border: 1px solid hsl(266, 47%, 36%);
     background-color: #575757;
@@ -12,6 +12,7 @@
     text-decoration-style: none; 
     height: 15px;
     width: 7em;
+    line-height: 40%;
     text-align: center; 
     text-decoration-color: #575757;
     font-family: Arial, Helvetica, sans-serif;

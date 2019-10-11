@@ -8,7 +8,7 @@ const colors = ['black','blue','red','white','green']
 let mtgTypes = []
 let mtgSets = []; Sets.filter(ele => mtgSets.push(ele.name)?(ele.type === "core" || ele.type === "expansion"):null)
 
-const rarity = ["Common", "Uncommon", "Rare", "Mythic Rare", "Special", "Basic Land"]
+const rarity = ["Common", "Uncommon", "Rare", "Mythic", "Special", "Basic Land"]
 class Filter extends Component {
     constructor(props){
         super(props);

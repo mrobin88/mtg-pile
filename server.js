@@ -15,14 +15,16 @@ app.use(express.json());
 require('dotenv').config();
 require('./config/database');
 
-const apiRouter = require('./routes/api/users');
+const userRouter = require('./routes/api/users');
+const cardRouter = require('./routes/api/card');
 
 // Configure both serve-favicon & static middlewares
 // to serve from the production 'build' folder
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.use('/api/users', apiRouter)
+app.use('/api/users', userRouter);
+app.use('/api/card', cardRouter);
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
