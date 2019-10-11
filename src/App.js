@@ -85,19 +85,22 @@ class App extends Component {
           <Redirect to='/login' />
           }/>
         </Switch>
+        <section className="cardNDetails">
         <Card
           display={this.state.display}
         />
+        {this.state.Details
+          ?<Details 
+          Details ={this.state.Details}
+          />
+          : <p className="noDetails">Use the filters to narrow down the cards you wish to search for.</p>
+          }
+          </section>
         <div>
           <Filter
             handleFilterSubmit={this.handleFilterSubmit}
             handleFilterChange={this.handleFilterChange} />
-          {this.state.Details
-          ?<Details 
-          Details ={this.state.Details}
-          />
-          : <p>Use the filters to narrow down the cards you wish to search for.</p>
-          }
+          
         </div>
     
         <div>
