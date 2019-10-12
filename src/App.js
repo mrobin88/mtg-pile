@@ -10,6 +10,7 @@ import SignupPage from './SignupPage'
 import Card from './components/Card/Card'
 import Filter from './components/Filters/Filters'
 import LoginPage from './components/LoginPage/LoginPage'
+import spalash from './bgpw.jpg'
 // style imports
 import './App.css';
 import Details from './components/Details/Details'
@@ -21,7 +22,7 @@ class App extends Component {
       cards: [],
       filters: {},
       user: userService.getUser(),
-      display: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=106426&type=card",
+      display: spalash,
     }
   }
   cardSelect = (e) => {
