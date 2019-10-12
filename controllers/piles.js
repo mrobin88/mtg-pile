@@ -1,4 +1,4 @@
-const Pile = require('../models/cardpile');
+const Pile = require('../models/pile');
 
 module.exports = {
     createPile

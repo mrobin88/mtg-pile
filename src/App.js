@@ -1,38 +1,49 @@
 
 import React, { Component } from 'react'
 import userService from './utils/userService'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import cardBack from './cardBack.jpg'
+import SignupPage from './SignupPage'
 import mtgService from '././utils/mtgService'
+import AlertTemplate from 'react-alert-template-basic'
+import LoginPage from './components/LoginPage/LoginPage'
+import { Route, Switch, Redirect } from 'react-router-dom'
+import { Provider } from "react-alert";
 //import Components
 import Nav from './components/Nav/Nav'
+import Pile from './components/Pile/Pile.js'
 import List from './components/List/List'
-import SignupPage from './SignupPage'
 import Card from './components/Card/Card'
 import Filter from './components/Filters/Filters'
-import LoginPage from './components/LoginPage/LoginPage'
-import spalash from './bgpw.jpg'
+import Details from './components/Details/Details'
+
 // style imports
 import './App.css';
-import Details from './components/Details/Details'
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
+      details: [],
+      usersPile : [],
       cards: [],
       filters: {},
       user: userService.getUser(),
-      display: spalash,
+      display: cardBack,
+    }
+  }
+  addCardToPile = () => {
+    if(this.state.user && !this.state.usersPile.includes(this.state.details[0])){
+      this.setState({ usersPile: [...this.state.usersPile, this.state.details[0]]}) 
     }
   }
   cardSelect = (e) => {
-    console.log(e.target.src)
     window.scrollTo(0, 0)
     let dataToDisplay = this.state.cards.filter(obj => obj.imageUrl === e.target.src)
  
     console.log(dataToDisplay)
     this.setState({display: e.target.src})
-    this.setState({Details: dataToDisplay})
+    this.setState({details: dataToDisplay})
     }
 
   handleFilterSubmit = async (e) => {
@@ -86,16 +97,32 @@ class App extends Component {
           <Redirect to='/login' />
           }/>
         </Switch>
+        
         <section className="cardNDetails">
-        <Card
-          display={this.state.display}
-        />
+
+        
+          <Card
+            details={this.state.details}
+            usersPile={this.state.usersPile}
+            user={this.state.user}
+            addCardToPile={this.addCardToPile}
+            display={this.state.display}
+          /> 
+      
         {this.state.Details
           ?<Details 
           Details ={this.state.Details}
           />
           : <p className="noDetails">Use the filters to narrow down the cards you wish to search for.</p>
           }
+          
+        {this.state.usersPile.length
+          ?<Pile 
+          usersPile ={this.state.usersPile.length}
+          />
+          : <p className="pileInfo">Login to Make Piles </p>
+          }
+
           </section>
         <div>
           <Filter

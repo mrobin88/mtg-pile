@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const pileSchema = new Schema({
+const pileSchema = new mongoose.Schema({
   createdBy: {
     type: Schema.Types.ObjectId,
     ref: 'User'
@@ -39,4 +39,4 @@ const pileSchema = new Schema({
     timestamps: true
   });
 
-module.exports = mongoose.model('Pile', eventSchema);
+module.exports = mongoose.model('Pile', pileSchema);
