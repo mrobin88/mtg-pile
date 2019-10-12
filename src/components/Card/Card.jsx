@@ -8,9 +8,9 @@ const Card = (props) => {
     <img alt='mtg card back' src={props.display}>   
     </img>
     <div className={styles.cardOpt}>
-        <button >Pile+</button><div>&nbsp;&nbsp;</div>
-        <button >Restart</button><div>&nbsp;&nbsp;</div>
-        <button>bettercard</button><div>&nbsp;&nbsp;</div>
+        <button disabled="true">Pile+</button><div>&nbsp;&nbsp;</div>
+        <button onSubmit="/" >Restart</button><div>&nbsp;&nbsp;</div>
+        <button disabled="true">bettercard</button><div>&nbsp;&nbsp;</div>
         </div>
     </div>
     </>

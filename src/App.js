@@ -4,7 +4,7 @@ import userService from './utils/userService'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import mtgService from '././utils/mtgService'
 //import Components
-import Nav from './Nav'
+import Nav from './components/Nav/Nav'
 import List from './components/List/List'
 import SignupPage from './SignupPage'
 import Card from './components/Card/Card'
