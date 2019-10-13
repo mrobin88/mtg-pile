@@ -1,8 +1,17 @@
 import React from 'react';
 const Pile = (props) => {
+  
+  let piledNames = props.usersPile.map(ele =>{
+    return <li> {ele.name} </li>
+  })
+
     return (
-        <h1>this is where piles will be</h1>
-      );
-}
+        <ul>
+          {piledNames}
+        </ul>
+        )
+    }
+
+
  
 export default Pile;

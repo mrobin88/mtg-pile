@@ -109,9 +109,9 @@ class App extends Component {
             display={this.state.display}
           /> 
       
-        {this.state.Details
+        {this.state.details
           ?<Details 
-          Details ={this.state.Details}
+          details ={this.state.details}
           />
           : <p className="noDetails">Use the filters to narrow down the cards you wish to search for.</p>
           }
