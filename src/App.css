@@ -1,5 +1,9 @@
-.App {
+*{
+  box-sizing: border-box;
   text-align: center;
+}
+
+.App {
   display: flex;
   flex-direction: column;
 }
