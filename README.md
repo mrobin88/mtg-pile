@@ -8,12 +8,14 @@ Mtg Pile is a simple web app built with react and uses the mtg api to get lists 
 
 No installation nesscary you can just go to this link.
 
-[Experiences Application get started here](https://experiencesapp.herokuapp.com)
+[mtg pile get started here](https://mtg-pile.herokuapp.com)
 
 ## Technologies Used
 
 - React
-- NodeJs
+- Express
+- Node
+- MongoDB/Mongoose
 - Html
 - CSS
 - JavaScript
