@@ -18,8 +18,6 @@ require('./config/database');
 const userRouter = require('./routes/api/users');
 const cardRouter = require('./routes/api/pile');
 
-// Configure both serve-favicon & static middlewares
-// to serve from the production 'build' folder
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 

@@ -13,14 +13,12 @@ const userSchema = new mongoose.Schema({
 
 userSchema.set('toJSON', {
   transform: function(doc, ret) {
-    // remove the password property when serializing doc to JSON
     delete ret.password;
     return ret;
   }
 });
 
 userSchema.pre('save', function(next) {
-  // 'this' will be set to the current document
   const user = this;
   if (!user.isModified('password')) return next();
   // password has been changed - salt and hash it

@@ -24,7 +24,7 @@ const Card = (props) => {
     <div className={styles.cardOpt}>
 
         <button onClick={addCardToPile} > Pile+ </button><div>&nbsp;&nbsp;</div>
-        <button > Restart </button><div>&nbsp;&nbsp;</div>
+       
         <button > bettercard </button><div>&nbsp;&nbsp;</div>
         </div>
     </div>

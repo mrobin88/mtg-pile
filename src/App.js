@@ -32,6 +32,9 @@ class App extends Component {
       display: cardBack,
     }
   }
+  resetFilter = () => {
+    this.setState({ filters: {} })
+  }
   addCardToPile = () => {
     if(this.state.user && !this.state.usersPile.includes(this.state.details[0])){
       this.setState({ usersPile: [...this.state.usersPile, this.state.details[0]]}) 
@@ -40,8 +43,6 @@ class App extends Component {
   cardSelect = (e) => {
     window.scrollTo(0, 0)
     let dataToDisplay = this.state.cards.filter(obj => obj.imageUrl === e.target.src)
- 
-    console.log(dataToDisplay)
     this.setState({display: e.target.src})
     this.setState({details: dataToDisplay})
     }

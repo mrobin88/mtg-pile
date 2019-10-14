@@ -35,10 +35,12 @@ class Filter extends Component {
                 
                 <select className={styles.fSelect} name="rarity"onChange={this.props.handleFilterChange}>
                 {rarity.map(rare =><option value={rare}>{rare}</option>)}</select>
-
+                <div className={styles.filterBtns}>
                 <form  onSubmit={this.props.handleFilterSubmit}>
                     <button className={styles.searchBtn} type="submit">Search</button>
                 </form>
+                <button className={styles.searchBtn} onClick={this.props.resetFilter}>Clear</button>
+                </div>
             </section>
         )
             
