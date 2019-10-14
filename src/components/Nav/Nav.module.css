@@ -1,0 +1,23 @@
+.navv{
+    background-color: black;
+    display:flex;
+    height: 55px;
+    font-family: Arial, Helvetica, sans-serif;
+    align-content: center;
+    justify-content: flex-end ;
+    text-decoration: 'none';
+}
+a {
+    padding: 13px 10px 10px 10px ;
+    font-size: 18px;
+    font-family: 'Anton', sans-serif;
+    color: white;
+}
+.login{
+    padding: 10px;
+
+}
+.title > a{
+    align-self: center;
+    justify-self: center;
+}

@@ -4,10 +4,10 @@ import userService from './utils/userService'
 import cardBack from './cardBack.jpg'
 import SignupPage from './SignupPage'
 import mtgService from '././utils/mtgService'
-import AlertTemplate from 'react-alert-template-basic'
+
 import LoginPage from './components/LoginPage/LoginPage'
 import { Route, Switch, Redirect } from 'react-router-dom'
-import { Provider } from "react-alert";
+
 //import Components
 import Nav from './components/Nav/Nav'
 import Pile from './components/Pile/Pile.js'
@@ -25,7 +25,7 @@ class App extends Component {
     super();
     this.state = {
       details: [],
-      usersPile : [],
+      usersPile: [],
       cards: [],
       filters: {},
       user: userService.getUser(),
@@ -58,6 +58,14 @@ class App extends Component {
     let value = e.target.value
     this.setState(function (curState) {
       curState.filters[key] = value
+      return (curState)
+    })
+  }
+  pDataChange = (e) => {
+    let key = e.target.name
+    let value = e.target.value
+    this.setState(function (curState) {
+      curState.usersPile[key] = value
       return (curState)
     })
   }
@@ -109,19 +117,25 @@ class App extends Component {
             display={this.state.display}
           /> 
       
-        {this.state.details
+        {this.state.details[0]
           ?<Details 
           details ={this.state.details}
           />
-          : <p className="noDetails">Use the filters to narrow down the cards you wish to search for.</p>
+          :<div className="noDetailsBox"> 
+          <div className="noDetails">
+            Use the filters to narrow down the cards you wish to search for.
+            </div>
+            </div>
           }
-          
-        {this.state.usersPile.length
-          ?<Pile 
-          usersPile ={this.state.usersPile.length}
+
+        
+          <Pile 
+          usersPile={this.state.usersPile}
+          pDataChange={this.pDataChange}
+          savePile={this.savePile}
           />
-          : <p className="pileInfo">Login to Make Piles </p>
-          }
+         
+        
 
           </section>
         <div>

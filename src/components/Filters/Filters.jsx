@@ -14,26 +14,26 @@ class Filter extends Component {
         super(props);
     }
     ctypes = cTypes.filter(ele => mtgTypes = Object.keys(ele.types))
-
     render(){
         return(
             <section>
                 <input
+                className={styles.nameSearch}
                 placeholder="contains or is named"
                 name="name"
                 value={this.name} 
                 onChange={this.props.handleFilterChange}
                 />
-                <select name="setName" onChange={this.props.handleFilterChange}>
+                <select className={styles.fSelect} name="setName" onChange={this.props.handleFilterChange}>
                 {mtgSets.map(sname =><option value={sname} >{sname}</option>)}</select>
                 
-                <select name = "type" onChange={this.props.handleFilterChange}>
+                <select className={styles.fSelect} name = "type" onChange={this.props.handleFilterChange}>
                 {mtgTypes.map(type =><option value={type} >{type}</option>)}</select>
 
-                <select name="colors" onChange={this.props.handleFilterChange}>
+                <select className={styles.fSelect} name="colors" onChange={this.props.handleFilterChange}>
                 {colors.map(col =><option value={[col]}>{col}</option>)}</select>
                 
-                <select name="rarity"onChange={this.props.handleFilterChange}>
+                <select className={styles.fSelect} name="rarity"onChange={this.props.handleFilterChange}>
                 {rarity.map(rare =><option value={rare}>{rare}</option>)}</select>
 
                 <form  onSubmit={this.props.handleFilterSubmit}>
