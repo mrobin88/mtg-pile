@@ -3,32 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bcrypt": "^5.0.0",
-    "bootstrap": "^4.3.1",
-    "dotenv": "^8.1.0",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.7.3",
-    "morgan": "^1.9.1",
-    "mtgsdk": "^0.4.3",
-    "react": "^16.10.2",
-    "react-alert": "^5.5.0",
-    "react-alert-template-basic": "^1.0.0",
-    "react-bootstrap": "^1.0.0-beta.14",
-    "react-dom": "^16.10.2",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0",
-    "react-spinners": "^0.6.1",
-    "serve-favicon": "^2.5.0",
-    "uuid": "^8.0.0",
-    "request": "^2.88.2",
-    "w3c-hr-time": "^1.0.2"
+    // ... (unchanged)
   },
   "engines": {
-  "node": "14.x"
-},
+    "node": "14.x"
+  },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "CI= react-scripts start",  // Updated line
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
