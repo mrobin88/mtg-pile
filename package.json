@@ -19,7 +19,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "react-spinners": "^0.6.1",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
     "uuid": "^8.0.0",
     "request": "^2.88.2",
     "w3c-hr-time": "^1.0.2"
