@@ -1,7 +1,115 @@
+/* Login Page - Elegant Style */
 .LoginPage {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-  }
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  max-width: 400px;
+  padding: 2rem;
+  background: var(--elegant-panel);
+  border: 3px solid var(--elegant-gold);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px var(--elegant-shadow);
+  font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+}
+
+.header-footer {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--elegant-accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-horizontal {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.col-sm-12 {
+  width: 100%;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--elegant-border);
+  background: var(--elegant-background);
+  color: var(--elegant-accent);
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--elegant-gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.form-control::placeholder {
+  color: var(--elegant-muted);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: 2px solid var(--elegant-gold);
+  background: var(--elegant-panel);
+  color: var(--elegant-accent);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  margin-right: 1rem;
+}
+
+.btn:hover {
+  background: var(--elegant-gold);
+  color: var(--elegant-panel);
+  box-shadow: 0 4px 12px var(--elegant-shadow);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+  background: var(--elegant-panel);
+  color: var(--elegant-accent);
+  box-shadow: none;
+}
+
+a {
+  color: var(--elegant-accent);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: 2px solid var(--elegant-border);
+  background: var(--elegant-panel);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+a:hover {
+  border-color: var(--elegant-gold);
+  background: var(--elegant-gold);
+  color: var(--elegant-panel);
+  box-shadow: 0 4px 12px var(--elegant-shadow);
+}

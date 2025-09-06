@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import userService from '../src/utils/userService';
+import './SignupPage.css';
 
 const SignupForm = (props) => {
   const navigate = useNavigate();
@@ -39,8 +40,9 @@ const SignupForm = (props) => {
   }
 
   return (
-    <div>
+    <div className="signup-container">
       <header className="header-footer">Sign Up</header>
+      {props.message && <div className="error-message">{props.message}</div>}
       <form className="form-horizontal" onSubmit={handleSubmit} >
         <div className="form-group">
           <div className="col-sm-12">
