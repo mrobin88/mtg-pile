@@ -1,19 +1,375 @@
-.cardOpt{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+/* Clean Card Component - Focused Design */
+.cardContainer {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
-.cardOpt > button{
-    color: aliceblue;
-    border: 1px solid hsl(266, 47%, 36%);
-    background-color: #575757;
-    padding: 10px;   
-    border-radius: 15px;
-    text-decoration-style: none; 
-    height: 15px;
-    width: 7em;
-    line-height: 40%;
-    text-align: center; 
-    text-decoration-color: #575757;
-    font-family: Arial, Helvetica, sans-serif;
+
+/* Main Card Display */
+.cardDisplay {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.cardImage:hover {
+  transform: scale(1.02);
+}
+
+/* Card Actions */
+.cardActions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.actionButton {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.actionButton:first-child {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+}
+
+.actionButton:last-child {
+  background: linear-gradient(45deg, #2196F3, #1976D2);
+  color: white;
+}
+
+.actionButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.actionButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Pricing Information */
+.pricingInfo {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px solid #dee2e6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.pricingInfo h4 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.priceRanges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.priceRange {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.priceRange:last-child {
+  border-bottom: none;
+}
+
+.priceLabel {
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.priceValue {
+  font-weight: 700;
+  color: #28a745;
+  font-size: 1rem;
+  background: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pricingNote {
+  text-align: center;
+  color: #6c757d;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+/* Purchase Section */
+.purchaseSection {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 2px solid #f0f0f0;
+}
+
+.purchaseButton {
+  display: inline-block;
+  background: linear-gradient(45deg, #FF9800, #F57C00);
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+.purchaseButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+  color: white;
+}
+
+/* Competitive Alternatives */
+.alternativesSection {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+}
+
+.alternativesSection h4 {
+  margin: 0 0 1.5rem 0;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.alternativesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.alternativeCard {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.alternativeCard:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
+  transform: translateY(-2px);
+}
+
+.alternativeImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.alternativeInfo h5 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.alternativeInfo p {
+  margin: 0 0 1rem 0;
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.smallLink {
+  display: block;
+  padding: 8px 12px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.smallLink:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  color: white;
+}
+
+/* No Alternatives Message */
+.noAlternatives {
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+}
+
+.noAlternatives p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* No Card Selected State */
+.noCard {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.noCard img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.noCard p {
+  margin: 0;
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .cardActions {
+    flex-direction: row;
+  }
+  
+  .actionButton {
+    flex: 1;
+  }
+  
+  .priceRanges {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .priceRange {
+    flex: 1;
+    min-width: 200px;
+    border-bottom: none;
+    border-right: 1px solid #dee2e6;
+    padding-right: 1rem;
+  }
+  
+  .priceRange:last-child {
+    border-right: none;
+  }
+  
+  .alternativesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cardDisplay {
+    padding: 2rem;
+  }
+  
+  .alternativesSection {
+    padding: 2rem;
+  }
+  
+  .alternativesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .pricingInfo {
+    padding: 2rem;
+  }
+}
+
+/* Loading States */
+.actionButton:disabled::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Focus States for Accessibility */
+.actionButton:focus,
+.purchaseButton:focus,
+.smallLink:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
 }

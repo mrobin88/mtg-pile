@@ -1,0 +1,143 @@
+/* Mana Symbol Styles */
+.manaCost {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-family: 'Magic: The Gathering', 'Beleren', serif;
+}
+
+.manaSymbol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.8em;
+  min-width: 1.2em;
+  height: 1.2em;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Size variants */
+.small .manaSymbol {
+  min-width: 1.1em;
+  height: 1.1em;
+  font-size: 0.77em;
+}
+
+.medium .manaSymbol {
+  min-width: 1.32em;
+  height: 1.32em;
+  font-size: 0.88em;
+}
+
+.large .manaSymbol {
+  min-width: 1.65em;
+  height: 1.65em;
+  font-size: 1.1em;
+}
+
+/* Color variants */
+.white {
+  background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);
+  color: #333;
+  border-color: #ccc;
+}
+
+.blue {
+  background: linear-gradient(135deg, #0e68ab 0%, #0a4d7a 100%);
+  color: white;
+  border-color: #0a4d7a;
+}
+
+.black {
+  background: linear-gradient(135deg, #150b00 0%, #0a0500 100%);
+  color: #ccc;
+  border-color: #333;
+}
+
+.red {
+  background: linear-gradient(135deg, #d3202a 0%, #a01a22 100%);
+  color: white;
+  border-color: #a01a22;
+}
+
+.green {
+  background: linear-gradient(135deg, #00733e 0%, #005a2f 100%);
+  color: white;
+  border-color: #005a2f;
+}
+
+.colorless {
+  background: linear-gradient(135deg, #c9c9c9 0%, #a8a8a8 100%);
+  color: #333;
+  border-color: #999;
+}
+
+.variable {
+  background: linear-gradient(135deg, #9c5bb0 0%, #7a4690 100%);
+  color: white;
+  border-color: #7a4690;
+}
+
+.snow {
+  background: linear-gradient(135deg, #b3d9ff 0%, #99ccff 100%);
+  color: #0066cc;
+  border-color: #66b3ff;
+}
+
+.phyrexian {
+  background: linear-gradient(135deg, #2d5016 0%, #1a3009 100%);
+  color: #90ee90;
+  border-color: #1a3009;
+}
+
+.generic {
+  background: linear-gradient(135deg, #c9c9c9 0%, #a8a8a8 100%);
+  color: #333;
+  border-color: #999;
+}
+
+.noMana {
+  color: #6c757d;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+/* Hover effects */
+.manaSymbol:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .manaSymbol {
+    min-width: 1em;
+    height: 1em;
+    font-size: 0.7em;
+  }
+  
+  .small .manaSymbol {
+    min-width: 1.8em;
+    height: 1.8em;
+    font-size: 0.6em;
+  }
+}
+
+@media (max-width: 480px) {
+  .manaSymbol {
+    min-width: 0.9em;
+    height: 0.9em;
+    font-size: 0.65em;
+  }
+  
+  .small .manaSymbol {
+    min-width: 0.7em;
+    height: 0.7em;
+    font-size: 0.55em;
+  }
+}

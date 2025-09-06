@@ -1,0 +1,414 @@
+.metaAnalysisContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Format Selector */
+.formatSelector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.formatTabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.formatTab {
+  padding: 12px 24px;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  background: white;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.formatTab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.formatTab.active {
+  border-color: var(--format-color);
+  background: var(--format-color);
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.timeframeSelector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.timeframeSelector label {
+  font-weight: 600;
+  color: #333;
+}
+
+.timeframeSelect {
+  padding: 8px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+}
+
+/* Meta Overview */
+.metaOverview {
+  margin-bottom: 3rem;
+}
+
+.overviewCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.overviewCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.overviewCard:hover {
+  transform: translateY(-4px);
+}
+
+.overviewCard h3 {
+  margin: 0 0 1rem 0;
+  color: #666;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.overviewNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.overviewDate {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Tier Rankings */
+.tierRankings {
+  margin-bottom: 3rem;
+}
+
+.tierRankings h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.tierSection {
+  margin-bottom: 3rem;
+}
+
+.tierTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.archetypeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.archetypeCard {
+  background: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.archetypeCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-color: #667eea;
+}
+
+.archetypeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.rank {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.tier {
+  padding: 4px 12px;
+  border-radius: 12px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.archetypeName {
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.archetypeStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.statValue {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Deck Lists */
+.deckListsSection {
+  margin-top: 3rem;
+}
+
+.deckListsSection h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.deckListsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.deckCard {
+  background: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.deckCard:hover {
+  transform: translateY(-2px);
+}
+
+.deckHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.deckHeader h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.deckPlacement {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.deckInfo {
+  margin-bottom: 1.5rem;
+}
+
+.deckInfo p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.deckInfo strong {
+  color: #333;
+}
+
+.deckActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.viewDeckBtn, .priceDeckBtn {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.viewDeckBtn {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+}
+
+.priceDeckBtn {
+  background: linear-gradient(45deg, #2196F3, #1976D2);
+  color: white;
+}
+
+.viewDeckBtn:hover, .priceDeckBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Loading */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  color: #666;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .metaAnalysisContainer {
+    padding: 1rem;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .formatSelector {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .formatTabs {
+    justify-content: center;
+  }
+  
+  .archetypeGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .deckListsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .archetypeStats {
+    grid-template-columns: 1fr;
+  }
+  
+  .deckActions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .formatTab {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .overviewCards {
+    grid-template-columns: 1fr;
+  }
+}

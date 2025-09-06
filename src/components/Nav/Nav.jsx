@@ -8,13 +8,19 @@ const Nav = (props) => {
         
         <nav className={styles.navv}>
             <Link style={{textDecoration: 'none' }} className="title" to='/' >MTG PILE</Link>
-            {props.user?<a style={{textDecoration: 'none' }}  onClick={props.handleLogout} className="logout" to='/'>{userLogoutStr }</a>
-            :
-            <><Link style={{textDecoration: 'none' }} className="login" to='/login'>Login</Link>
-            <Link style={{textDecoration: 'none' }} className="signup" to='/signup'>Sign Up</Link>
-            </>
-        
-        }
+            
+            <div className={styles.navLinks}>
+              <Link style={{textDecoration: 'none' }} className="nav-link" to='/meta'>Meta Analysis</Link>
+              <Link style={{textDecoration: 'none' }} className="nav-link" to='/players'>Top Players</Link>
+              {props.user ? (
+                <button style={{textDecoration: 'none', background: 'none', border: 'none', cursor: 'pointer' }} onClick={props.handleLogout} className="logout">{userLogoutStr}</button>
+              ) : (
+                <>
+                  <Link style={{textDecoration: 'none' }} className="login" to='/login'>Login</Link>
+                  <Link style={{textDecoration: 'none' }} className="signup" to='/signup'>Sign Up</Link>
+                </>
+              )}
+            </div>
         </nav>
     )
 }

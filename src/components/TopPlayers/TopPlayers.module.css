@@ -1,0 +1,480 @@
+/* Top Players - Elegant Style */
+.topPlayersContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: var(--elegant-bg);
+  min-height: 100vh;
+  font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--elegant-accent);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  border-bottom: 3px solid var(--elegant-gold);
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--elegant-accent);
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: var(--elegant-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: var(--elegant-accent);
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--elegant-border);
+  border-top: 4px solid var(--elegant-gold);
+  border-radius: 0;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.retryButton {
+  background: var(--elegant-panel);
+  color: var(--elegant-accent);
+  border: 2px solid var(--elegant-accent);
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: inherit;
+}
+
+.retryButton:hover {
+  background: var(--elegant-accent);
+  color: var(--elegant-panel);
+  box-shadow: 0 4px 12px var(--elegant-shadow);
+}
+
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.playerCard {
+  display: flex;
+  align-items: center;
+  background: var(--elegant-panel);
+  border: 2px solid var(--elegant-border);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+  box-shadow: 0 4px 12px var(--elegant-shadow);
+}
+
+.playerCard:hover {
+  border-color: var(--elegant-gold);
+  box-shadow: 0 8px 24px var(--elegant-shadow);
+  transform: translateX(5px);
+}
+
+.playerCard.selected {
+  border-color: var(--elegant-gold);
+  background: var(--elegant-highlight);
+  box-shadow: 0 8px 24px var(--elegant-shadow);
+}
+
+.playerCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--elegant-gold);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.playerCard.selected::before {
+  opacity: 1;
+}
+
+.playerRank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: var(--elegant-panel);
+  border: 2px solid var(--elegant-gold);
+  margin-right: 20px;
+  color: var(--elegant-accent);
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.rankIcon {
+  font-size: 2rem;
+}
+
+.playerInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.playerHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.playerName {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--elegant-accent);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.country {
+  font-size: 1rem;
+  color: var(--elegant-text-dim);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.playerStats {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: var(--elegant-text-dim);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.statValue {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--elegant-accent);
+  text-transform: uppercase;
+}
+
+.formats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.formatsLabel {
+  font-size: 0.9rem;
+  color: var(--elegant-text-dim);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.formatTags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.formatTag {
+  padding: 4px 12px;
+  border: 1px solid var(--elegant-border);
+  background: var(--elegant-highlight);
+  color: var(--elegant-accent);
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: inherit;
+}
+
+.qpPoints {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--elegant-panel);
+  border: 2px solid var(--elegant-gold);
+  color: var(--elegant-accent);
+  padding: 15px 20px;
+  min-width: 100px;
+  font-family: inherit;
+}
+
+.qpNumber {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+  color: var(--elegant-gold);
+}
+
+.qpLabel {
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--elegant-accent);
+}
+
+/* Player Modal */
+.playerModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modalContent {
+  background: var(--cockpit-panel);
+  border: 2px solid var(--cockpit-accent);
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+  font-family: inherit;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  border-bottom: 2px solid var(--cockpit-accent);
+  background: var(--cockpit-highlight);
+  color: var(--cockpit-accent);
+}
+
+.modalHeader h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  padding: 0;
+}
+
+.closeButton {
+  background: none;
+  border: 2px solid var(--cockpit-accent);
+  color: var(--cockpit-accent);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.closeButton:hover {
+  background: var(--cockpit-accent);
+  color: var(--cockpit-bg);
+}
+
+.modalBody {
+  padding: 30px;
+}
+
+.playerDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.detailSection h3 {
+  color: var(--cockpit-accent);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  border-bottom: 2px solid var(--cockpit-accent);
+  padding-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-left: none;
+  padding-left: 0;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.detailLabel {
+  font-size: 0.9rem;
+  color: var(--cockpit-text-dim);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.detailValue {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--cockpit-accent);
+  text-transform: uppercase;
+}
+
+.resultsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resultItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: var(--cockpit-bg);
+  border: 1px solid var(--cockpit-border);
+  border-left: 4px solid var(--cockpit-accent);
+}
+
+.resultTournament {
+  font-weight: bold;
+  color: var(--cockpit-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.resultPlacement {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.placement {
+  font-weight: bold;
+  color: var(--cockpit-accent);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.qpEarned {
+  font-size: 0.9rem;
+  color: var(--cockpit-warning);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.formatsList {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .topPlayersContainer {
+    padding: 15px;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .playerCard {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .playerRank {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .playerStats {
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .modalContent {
+    margin: 10px;
+  }
+  
+  .modalHeader {
+    padding: 20px;
+  }
+  
+  .modalBody {
+    padding: 20px;
+  }
+  
+  .detailGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .resultItem {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .resultPlacement {
+    align-items: center;
+  }
+}

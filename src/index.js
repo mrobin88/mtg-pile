@@ -1,15 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
 import * as serviceWorker from '../src/utils/serviceWorker';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
+const container = document.getElementById('root');
+const root = createRoot(container);
 
-
-ReactDOM.render(
-  <Router><Route component={App}/></Router>,
-  document.getElementById('root')
+root.render(
+  <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+    <App />
+  </Router>
 );
 
 // If you want your app to work offline and load faster, you can change

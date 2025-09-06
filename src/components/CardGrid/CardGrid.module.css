@@ -1,0 +1,310 @@
+/* Card Grid - Elegant Style */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+}
+
+.cardContainer {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.cardContainer:hover {
+  transform: translateY(-5px);
+  z-index: 10;
+}
+
+.cardWrapper {
+  position: relative;
+  background: var(--elegant-panel);
+  border: 2px solid var(--elegant-border);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px var(--elegant-shadow);
+}
+
+.cardContainer:hover .cardWrapper {
+  border-color: var(--elegant-gold);
+  box-shadow: 0 8px 24px var(--elegant-shadow);
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+  border-bottom: 2px solid var(--elegant-border);
+}
+
+.cardContainer:hover .cardImage {
+  transform: scale(1.02);
+}
+
+.cardInfo {
+  padding: 12px;
+  background: var(--elegant-panel);
+  border-top: 2px solid var(--elegant-border);
+}
+
+.cardName {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--elegant-accent);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.cardType {
+  font-size: 0.8rem;
+  color: var(--elegant-text-dim);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cardMana {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.cmc {
+  font-size: 0.8rem;
+  color: var(--elegant-gold);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cardText {
+  font-size: 0.75rem;
+  color: var(--elegant-text);
+  line-height: 1.3;
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cardPowerToughness {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--elegant-border);
+}
+
+.powerToughness {
+  font-size: 0.8rem;
+  color: var(--elegant-accent);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cardRarity {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 8px;
+  border-radius: 0;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid var(--elegant-border);
+}
+
+.rarityCommon {
+  background: var(--elegant-panel);
+  color: var(--elegant-text-dim);
+  border-color: var(--elegant-text-dim);
+}
+
+.rarityUncommon {
+  background: var(--elegant-panel);
+  color: var(--elegant-accent);
+  border-color: var(--elegant-accent);
+}
+
+.rarityRare {
+  background: var(--elegant-panel);
+  color: var(--elegant-gold);
+  border-color: var(--elegant-gold);
+}
+
+.rarityMythic {
+  background: var(--elegant-panel);
+  color: var(--elegant-error);
+  border-color: var(--elegant-error);
+}
+
+.cardSet {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  padding: 4px 8px;
+  background: var(--elegant-bg);
+  border: 1px solid var(--elegant-border);
+  font-size: 0.7rem;
+  color: var(--elegant-text-dim);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: var(--elegant-accent);
+}
+
+.loadingSpinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--elegant-border);
+  border-top: 4px solid var(--elegant-gold);
+  border-radius: 0;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loadingText {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--elegant-text-dim);
+}
+
+.emptyState h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--elegant-accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.emptyState p {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.errorState {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--elegant-error);
+}
+
+.errorState h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--elegant-error);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.errorState p {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.retryButton {
+  background: var(--elegant-panel);
+  color: var(--elegant-error);
+  border: 2px solid var(--elegant-error);
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: inherit;
+}
+
+.retryButton:hover {
+  background: var(--elegant-error);
+  color: var(--elegant-panel);
+  box-shadow: 0 4px 12px var(--elegant-shadow);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cardGrid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .cardInfo {
+    padding: 10px;
+  }
+  
+  .cardName {
+    font-size: 0.8rem;
+  }
+  
+  .cardType {
+    font-size: 0.7rem;
+  }
+  
+  .cardText {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .cardInfo {
+    padding: 8px;
+  }
+  
+  .cardName {
+    font-size: 0.7rem;
+  }
+  
+  .cardType {
+    font-size: 0.6rem;
+  }
+  
+  .cardText {
+    font-size: 0.6rem;
+  }
+  
+  .cardRarity,
+  .cardSet {
+    font-size: 0.6rem;
+    padding: 2px 4px;
+  }
+}

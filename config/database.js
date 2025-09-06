@@ -1,20 +1,24 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.DATABASE_URL, {
+// Use MONGODB_URI for production (Atlas) or DATABASE_URL for local development
+const mongoURI = process.env.MONGODB_URI || process.env.DATABASE_URL || 'mongodb://localhost:27017/mtg-pile';
+
+mongoose.connect(mongoURI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
-  }
-  
-  ).catch(err => {
-    console.log(err);
+    useUnifiedTopology: true
+}).catch(err => {
+    console.log('MongoDB connection error:', err);
 });
 
-const db = mongoose.connection
+const db = mongoose.connection;
 
 db.on('connected', function(){
-    console.log(`Connected to MongoDB at ${db.host}:${db.port} that contains ${db.modelNames.length} things`)
-})
+    console.log(`Connected to MongoDB at ${db.host}:${db.port} that contains ${db.modelNames.length} things`);
+});
 
-module.exports = mongoose
+db.on('error', function(err){
+    console.log('MongoDB error:', err);
+});
+
+module.exports = mongoose;
 

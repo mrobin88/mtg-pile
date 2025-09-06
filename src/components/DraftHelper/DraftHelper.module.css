@@ -1,0 +1,500 @@
+.draftHelper {
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.header h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.controls label {
+  font-weight: 600;
+  color: #495057;
+}
+
+.controls select {
+  padding: 8px 12px;
+  border: 2px solid #dee2e6;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.controls select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.evaluationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.cardEvaluation {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.cardEvaluation:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-color: #007bff;
+}
+
+.cardImage {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.cardImage img {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cardInfo {
+  margin-bottom: 16px;
+}
+
+.cardInfo h4 {
+  margin: 0 0 8px 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.cardType {
+  margin: 4px 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.cardMana {
+  margin: 4px 0;
+  color: #495057;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.scores {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.scoreItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 8px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.scoreLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+.scoreValue {
+  font-weight: 700;
+  font-size: 1rem;
+  min-width: 40px;
+  text-align: center;
+}
+
+.scoreGrade {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6c757d;
+}
+
+/* Score Colors */
+.excellent {
+  color: #28a745;
+}
+
+.good {
+  color: #17a2b8;
+}
+
+.average {
+  color: #ffc107;
+}
+
+.poor {
+  color: #dc3545;
+}
+
+.pickOrder {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: #e3f2fd;
+  border-radius: 6px;
+  border-left: 4px solid #2196f3;
+}
+
+.pickNumber {
+  background: #2196f3;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.pickReason {
+  font-size: 0.85rem;
+  color: #1976d2;
+  font-weight: 500;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modalContent {
+  background: white;
+  border-radius: 16px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.modalHeader h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.4rem;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.closeButton:hover {
+  background: #f8f9fa;
+  color: #495057;
+}
+
+.modalBody {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.cardDisplay {
+  text-align: center;
+}
+
+.cardDisplay img {
+  width: 200px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.evaluationDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.scoreBreakdown h4,
+.recommendations h4,
+.cardDetails h4 {
+  margin: 0 0 12px 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 8px;
+}
+
+.scoreRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.scoreRow:last-child {
+  border-bottom: none;
+}
+
+.scoreRow span:first-child {
+  font-weight: 500;
+  color: #495057;
+}
+
+.recommendations ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.recommendations li {
+  margin-bottom: 8px;
+  color: #495057;
+  line-height: 1.4;
+}
+
+.cardDetails p {
+  margin: 8px 0;
+  color: #495057;
+  line-height: 1.4;
+}
+
+.cardText {
+  margin-top: 12px;
+}
+
+  .cardText p {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 3px solid #007bff;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  /* Card Actions */
+  .cardActions {
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .actionButton {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .actionButton:hover:not(:disabled) {
+    background: #0056b3;
+  }
+
+  .actionButton:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+  }
+
+  /* Alternatives Section */
+  .alternativesSection {
+    margin-top: 32px;
+    padding: 24px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .alternativesSection h3 {
+    margin: 0 0 20px 0;
+    color: #2c3e50;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .alternativesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .alternativeCard {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .alternativeCard:hover {
+    border-color: #007bff;
+    transform: translateY(-2px);
+  }
+
+  .alternativeImage {
+    width: 100px;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .alternativeInfo h5 {
+    margin: 0 0 6px 0;
+    color: #2c3e50;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .alternativeInfo p {
+    margin: 4px 0;
+    color: #6c757d;
+    font-size: 0.85rem;
+  }
+
+  .alternativeRarity {
+    font-weight: 600;
+    color: #495057;
+    text-transform: capitalize;
+  }
+
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 40px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading p {
+  color: #6c757d;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  .evaluationGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modalBody {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .cardDisplay img {
+    width: 150px;
+  }
+  
+  .controls {
+    width: 100%;
+  }
+  
+  .controls select {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .draftHelper {
+    padding: 16px;
+  }
+  
+  .cardEvaluation {
+    padding: 12px;
+  }
+  
+  .cardImage img {
+    width: 100px;
+  }
+  
+  .modal {
+    padding: 10px;
+  }
+  
+  .modalContent {
+    border-radius: 12px;
+  }
+  
+  .modalHeader,
+  .modalBody {
+    padding: 16px;
+  }
+}

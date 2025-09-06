@@ -1,200 +1,241 @@
-.searchBtn{background-attachment: scroll;
-background-clip: border-box;
-background-color: rgb(224, 225, 226);
-background-image: none;
-background-origin: padding-box;
-background-position: 0% 0%;
-background-position-x: 0%;
-background-position-y: 0%;
-background-repeat: repeat;
-background-size: auto;
-border-bottom-color: rgba(0, 0, 0, 0.6);
-border-bottom-left-radius: 4px;
-border-bottom-right-radius: 4px;
-border-bottom-style: none;
-border-bottom-width: 5px;
-border-image-outset: 0;
-border-image-repeat: stretch;
-border-image-slice: 100%;
-border-image-source: none;
-border-image-width: 1;
-border-left-color: rgba(0, 0, 0, 0.6);
-border-left-style: none;
-border-left-width: 0px;
-border-right-color: rgba(0, 0, 0, 0.6);
-border-right-style: none;
-border-right-width: 0px;
-border-top-color: rgba(0, 0, 0, 0.6);
-border-top-left-radius: 4px;
-border-top-right-radius: 4px;
-border-top-style: none;
-border-top-width: 0px;
-box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 1px inset, rgba(34, 36, 38, 0.15) 0px 0px 0px 0px inset;
-box-sizing: border-box;
-color: rgba(0, 0, 0, 0.6);
-cursor: pointer;
-display: inline-block;
-font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
-font-size: 14px;
-font-style: normal;
-font-weight: 700;
-line-height: 14px;
-margin-bottom: 0px;
-margin-left: 0px;
-margin-right: 3.5px;
-margin-top: 0px;
-min-height: 14px;
-outline-color: rgba(0, 0, 0, 0.6);
-outline-style: none;
-outline-width: 0px;
-overflow: visible;
-overflow-x: visible;
-overflow-y: visible;
-padding-bottom: 11px;
-padding-left: 21px;
-padding-right: 21px;
-padding-top: 11px;
-text-align: center;
-text-decoration: none;
-text-decoration-color: rgba(0, 0, 0, 0.6);
-text-decoration-line: none;
-text-decoration-style: solid;
-text-shadow: none;
-text-transform: none;
-transition-delay: 0s, 0s, 0s, 0s, 0s, 0s;
-transition-duration: 0.1s, 0.1s, 0.1s, 0.1s, 0.1s, 0.1s;
-transition-property: opacity, background-color, color, box-shadow, background, box-shadow;
-transition-timing-function: ease, ease, ease, ease, ease, ease;
-user-select: none;
-vertical-align: baseline;
--moz-appearance: button;}
-
-.fSelect{
-    align-items: stretch;
-background-color: rgb(254, 254, 254);
-background-image: url("https://assets.scryfall.com/assets/icons/chevron-down-6c9f86828f78ac574dde6176fba53f5f7697efff1b6b1e1d5bc0297c5d332bef.svg");
-background-position: calc(100% - 8px) 12px;
-background-position-x: calc(100% - 8px);
-background-position-y: 12px;
-background-repeat: no-repeat;
-background-size: auto 40%;
-border-bottom-color: rgb(174, 174, 174);
-border-bottom-left-radius: 2px;
-border-bottom-right-radius: 2px;
-border-bottom-style: solid;
-border-bottom-width: 1px;
-border-collapse: collapse;
-border-image-outset: 0;
-border-image-repeat: stretch;
-border-image-slice: 100%;
-border-image-source: none;
-border-image-width: 1;
-border-left-color: rgb(174, 174, 174);
-border-left-style: solid;
-border-left-width: 1px;
-border-right-color: rgb(174, 174, 174);
-border-right-style: solid;
-border-right-width: 1px;
-border-spacing: 0px 0px;
-border-top-color: rgb(174, 174, 174);
-border-top-left-radius: 2px;
-border-top-right-radius: 2px;
-border-top-style: solid;
-border-top-width: 1px;
-box-sizing: border-box;
-color: rgb(52, 50, 66);
-cursor: pointer;
-flex-basis: auto;
-flex-grow: 0;
-flex-shrink: 0;
-font-family: -apple-system;
-font-size: 16px;
-font-weight: 400;
-height: 38px;
-line-height: 20px;
-list-style-image: none;
-list-style-position: outside;
-list-style-type: none;
-margin-bottom: 0px;
-margin-left: 0px;
-margin-right: 5px;
-margin-top: 0px;
-max-width: 420px;
-outline-color: rgb(52, 50, 66);
-outline-style: none;
-outline-width: 0px;
-padding-bottom: 8px;
-padding-left: 10px;
-padding-right: 30px;
-padding-top: 8px;
-text-decoration: none;
-text-decoration-color: rgb(52, 50, 66);
-text-decoration-line: none;
-text-decoration-style: solid;
-transition-delay: 0s, 0s, 0s, 0s;
-transition-duration: 0.06s, 0.06s, 0.06s, 0.06s;
-transition-property: background-color, border-color, box-shadow, box-shadow;
-transition-timing-function: linear, linear, linear, linear;
-width: 170.7px;
--moz-appearance: none;
--moz-box-align: stretch;
--moz-box-flex: 0;
-border-radius: 3px;
+.filtersContainer {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 2rem auto;
+  max-width: 1200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.nameSearch{
-    -ms-text-align-last: center;
-    border-bottom-color: rgb(60, 64, 67);
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-bottom-style: none;
-    border-bottom-width: 0px;
-    border-image-outset: 0;
-    border-image-repeat: stretch;
-    border-image-slice: 100%;
-    border-image-source: none;
-    border-image-width: 1;
-    border-left-color: rgb(60, 64, 67);
-    border-left-style: none;
-    border-left-width: 0px;
-    border-right-color: rgb(60, 64, 67);
-    border-right-style: none;
-    border-right-width: 0px;
-    border-top-color: rgb(60, 64, 67);
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    border-top-style: none;
-    border-top-width: 0px;
-    box-shadow: none;
-    box-sizing: border-box;
-    color: rgb(60, 64, 67);
-    font-family: Roboto, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    height: 20px;
-    letter-spacing: 0.2px;
-    line-height: 20px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    outline-color: rgb(60, 64, 67);
-    outline-style: none;
-    outline-width: 0px;
-    overflow: hidden;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    text-overflow: ellipsis;
-    height: 38px;
-    width: 170px;
-    padding: 15px;
-    margin-block-end: 5px;
-    margin-right: 5px;
-    margin-top: 5px;
-    background-color: rgb(232, 234, 237);
+.filtersHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: white;
 }
 
-.filterBtns{
-    display: flex;
+.filtersHeader h3 {
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.filtersHeader p {
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.filtersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.filterGroup label {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nameSearchWrapper {
+  position: relative;
+}
+
+.nameSearch {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.nameSearch:focus {
+  outline: none;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.suggestions {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  max-height: 280px;
+  overflow-y: auto;
+  padding: 6px;
+  margin: 0;
+  list-style: none;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid #eee;
+}
+
+.suggestionItem {
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.suggestionItem:hover {
+  background: #f5f7ff;
+}
+
+.suggestionItem.active {
+  background: #eef1ff;
+}
+
+.filterSelect {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterSelect:focus {
+  outline: none;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.colorCheckboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.colorCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.colorCheckbox:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.colorCheckbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #667eea;
+}
+
+.colorLabel {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.filterActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.searchButton, .clearButton {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.searchButton {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.searchButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.6);
+}
+
+.clearButton {
+  background: linear-gradient(45deg, #f44336, #d32f2f);
+  color: white;
+  box-shadow: 0 4px 15px rgba(244, 67, 54, 0.4);
+}
+
+.clearButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(244, 67, 54, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .filtersContainer {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .filtersGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .filterActions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .searchButton, .clearButton {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .filtersHeader h3 {
+    font-size: 1.5rem;
+  }
+  
+  .filtersHeader p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .filtersContainer {
+    padding: 1rem;
+  }
+  
+  .colorCheckboxes {
     justify-content: center;
+  }
+  
+  .colorCheckbox {
+    min-width: 80px;
+    justify-content: center;
+  }
 }

@@ -1,5 +1,291 @@
-.theList{
-    display: flex;
+.listContainer {
+  width: 100%;
+}
+
+.resultsCount {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.priceLoading {
+  opacity: 0.8;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cardItem {
+  background: white;
+  border: 2px solid #f0f0f0;
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardItem:hover {
+  transform: translateY(-4px);
+  border-color: #667eea;
+  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.15);
+}
+
+.cardItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.cardItem:hover::before {
+  transform: scaleX(1);
+}
+
+.cardItem::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.cardItem:hover::after {
+  left: 100%;
+}
+
+.cardPrice {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(45deg, #FF9800, #F57C00);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+  z-index: 2;
+  max-width: 120px;
+  text-align: center;
+  line-height: 1.2;
+  cursor: help;
+}
+
+.cardPrice:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.cardItem:hover .cardImage {
+  transform: scale(1.02);
+}
+
+.cardInfo {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.cardInfo h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.cardType {
+  margin: 0 0 0.5rem 0;
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.cardMana {
+  margin: 0 0 0.5rem 0;
+  color: #888;
+  font-size: 0.9rem;
+  font-family: 'Beleren', 'Matrix', serif;
+}
+
+.cardCmc {
+  display: inline-block;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.quickActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.quickActionBtn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.viewBtn {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+}
+
+.buyBtn {
+  background: linear-gradient(45deg, #FF9800, #F57C00);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.buyBtn::before {
+  content: "💰";
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.buyBtn:hover::before {
+  left: 10px;
+  opacity: 1;
+}
+
+.quickActionBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #f0f0f0;
+  flex-wrap: wrap;
+}
+
+.paginationButton {
+  padding: 10px 16px;
+  border: 2px solid #667eea;
+  background: white;
+  color: #667eea;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 44px;
+}
+
+.paginationButton:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.paginationButton.active {
+  background: #667eea;
+  color: white;
+}
+
+.paginationButton:disabled {
+  border-color: #ccc;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.paginationButton:disabled:hover {
+  transform: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cardGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  .cardItem {
+    padding: 1rem;
+  }
+  
+  .quickActions {
     flex-direction: column;
-    
+  }
+  
+  .pagination {
+    gap: 0.5rem;
+  }
+  
+  .paginationButton {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cardPrice {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+    max-width: 100px;
+  }
+  
+  .cardInfo h4 {
+    font-size: 1.1rem;
+  }
+  
+  .pagination {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
