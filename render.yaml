@@ -3,7 +3,7 @@ services:
     name: mtg-pile
     env: node
     plan: free
-    buildCommand: npm install && npm run build
+    buildCommand: npm install
     startCommand: npm run server
     envVars:
       - key: NODE_ENV

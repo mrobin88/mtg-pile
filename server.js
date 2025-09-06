@@ -23,7 +23,19 @@ app.use('/api/card', cardRouter);
 const isProduction = process.env.NODE_ENV === 'production' || fs.existsSync(path.join(__dirname, 'build'));
 
 if (isProduction) {
-  // Production: Serve the React build
+  // Production: Build React app first, then serve it
+  const { execSync } = require('child_process');
+  
+  try {
+    console.log('Building React app for production...');
+    execSync('npm run build', { stdio: 'inherit' });
+    console.log('React app built successfully!');
+  } catch (error) {
+    console.error('Failed to build React app:', error.message);
+    process.exit(1);
+  }
+  
+  // Serve the React build
   app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
   app.use(express.static(path.join(__dirname, 'build')));
   

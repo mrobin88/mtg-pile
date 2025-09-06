@@ -2,6 +2,7 @@
   "name": "mtg-pile",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
