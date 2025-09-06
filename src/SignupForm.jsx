@@ -36,7 +36,7 @@ const SignupForm = (props) => {
   }
 
   const isFormInvalid = () => {
-    return !(state.name && state.email && state.password === state.passwordConf);
+    return !(state.name && state.email && state.password && state.password.length >= 6 && state.password === state.passwordConf);
   }
 
   return (
@@ -56,7 +56,7 @@ const SignupForm = (props) => {
         </div>
         <div className="form-group">
           <div className="col-sm-12">
-            <input type="password" className="form-control" placeholder="Password" value={state.password} name="password" onChange={handleChange} />
+            <input type="password" className="form-control" placeholder="Password (min 6 characters)" value={state.password} name="password" onChange={handleChange} />
           </div>
         </div>
         <div className="form-group">

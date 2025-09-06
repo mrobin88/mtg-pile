@@ -8,7 +8,7 @@ const LoginPage = (props) => {
   
   const [state, setState] = useState({
     email: '',
-    pw: ''
+    password: ''
   });
   
   const [error, setError] = useState('');
@@ -48,7 +48,7 @@ const LoginPage = (props) => {
         </div>
         <div className="form-group">
           <div className="col-sm-12">
-            <input type="password" className="form-control" placeholder="Password" value={state.pw} name="pw" onChange={handleChange} required />
+            <input type="password" className="form-control" placeholder="Password" value={state.password} name="password" onChange={handleChange} required />
           </div>
         </div>
         <div className="form-group">

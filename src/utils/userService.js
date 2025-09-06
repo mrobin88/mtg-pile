@@ -10,13 +10,11 @@ function signup(user) {
   })
   .then(res => {
     if (res.ok) return res.json();
-    // Probably a duplicate email
-    throw new Error('Email already taken!');
+    return res.json().then(err => {
+      throw new Error(err.message || 'Signup failed');
+    });
   })
-  // Parameter destructuring!
   .then(({token}) => tokenService.setToken(token));
-  // The above could have been written as
-  //.then((token) => token.token);
 }
 
 function getUser() {
@@ -34,9 +32,10 @@ function login(creds) {
     body: JSON.stringify(creds)
   })
   .then(res => {
-    // Valid login if we have a status of 2xx (res.ok)
     if (res.ok) return res.json();
-    throw new Error('Bad Credentials!');
+    return res.json().then(err => {
+      throw new Error(err.message || 'Login failed');
+    });
   })
   .then(({token}) => tokenService.setToken(token));
 }
