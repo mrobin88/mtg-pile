@@ -10,10 +10,21 @@ app.use(logger('dev'));
 app.use(express.json());
 
 require('dotenv').config();
-require('./config/database');
+const mongoose = require('./config/database');
 
 const userRouter = require('./routes/api/users');
 const cardRouter = require('./routes/api/pile');
+
+// Health check endpoint for production testing
+app.get('/api/health', (req, res) => {
+  const dbStatus = mongoose.connection.readyState === 1 ? 'connected' : 'disconnected';
+  res.json({
+    status: 'ok',
+    database: dbStatus,
+    environment: process.env.NODE_ENV || 'development',
+    timestamp: new Date().toISOString()
+  });
+});
 
 // API routes
 app.use('/api/users', userRouter);

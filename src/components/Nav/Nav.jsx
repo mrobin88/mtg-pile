@@ -12,8 +12,12 @@ const Nav = (props) => {
             <div className={styles.navLinks}>
               <Link style={{textDecoration: 'none' }} className="nav-link" to='/meta'>Meta Analysis</Link>
               <Link style={{textDecoration: 'none' }} className="nav-link" to='/players'>Top Players</Link>
+              <Link style={{textDecoration: 'none' }} className="nav-link" to='/test'>🧪 Test</Link>
               {props.user ? (
-                <button style={{textDecoration: 'none', background: 'none', border: 'none', cursor: 'pointer' }} onClick={props.handleLogout} className="logout">{userLogoutStr}</button>
+                <>
+                  <span className={styles.userGreeting}>👤 {props.user.name}</span>
+                  <button style={{textDecoration: 'none', background: 'none', border: 'none', cursor: 'pointer' }} onClick={props.handleLogout} className="logout">{userLogoutStr}</button>
+                </>
               ) : (
                 <>
                   <Link style={{textDecoration: 'none' }} className="login" to='/login'>Login</Link>

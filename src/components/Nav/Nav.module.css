@@ -77,6 +77,18 @@
   box-shadow: 0 4px 12px var(--elegant-shadow);
 }
 
+.userGreeting {
+  color: var(--elegant-gold);
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 2px solid var(--elegant-gold);
+  background: var(--elegant-panel);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: inherit;
+}
+
 .logout {
   color: var(--elegant-accent);
   text-decoration: none;

@@ -11,6 +11,7 @@ import LoginPage from './components/LoginPage/LoginPage';
 import SignupPage from './SignupPage';
 import MetaAnalysis from './components/MetaAnalysis/MetaAnalysis';
 import TopPlayers from './components/TopPlayers/TopPlayers';
+import TestPage from './components/TestPage/TestPage';
 
 // Services
 import mtgService from './utils/mtgService';
@@ -26,7 +27,14 @@ function App() {
   // Load initial cards (latest set)
   useEffect(() => {
     loadInitialCards();
-  }, []);
+    
+    // Debug: Log user state for production testing
+    if (user) {
+      console.log('✅ User logged in:', { name: user.name, email: user.email });
+    } else {
+      console.log('❌ No user logged in');
+    }
+  }, [user]);
 
   const loadInitialCards = async () => {
     setLoading(true);
@@ -76,6 +84,7 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/meta" element={<MetaAnalysis />} />
         <Route path="/players" element={<TopPlayers />} />
+        <Route path="/test" element={<TestPage user={user} />} />
         <Route path="/" element={
           <div className="main-content">
             <FilterBar 

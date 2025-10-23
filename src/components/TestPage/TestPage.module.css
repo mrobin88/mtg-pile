@@ -1,0 +1,100 @@
+/* Test Page - Elegant Style */
+.testPage {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--elegant-accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  text-align: center;
+  border-bottom: 3px solid var(--elegant-gold);
+  padding-bottom: 1rem;
+}
+
+.section {
+  background: var(--elegant-panel);
+  border: 3px solid var(--elegant-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px var(--elegant-shadow);
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  color: var(--elegant-gold);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.status p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.success {
+  color: #90EE90;
+  font-weight: bold;
+}
+
+.success p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.error {
+  color: #FF6B6B;
+  font-weight: bold;
+}
+
+.warning {
+  color: var(--elegant-gold);
+  font-weight: bold;
+}
+
+.warning p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.loading {
+  color: var(--elegant-accent);
+  font-style: italic;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.button {
+  padding: 12px 24px;
+  border: 2px solid var(--elegant-gold);
+  background: var(--elegant-panel);
+  color: var(--elegant-accent);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: var(--elegant-gold);
+  color: var(--elegant-panel);
+  box-shadow: 0 4px 12px var(--elegant-shadow);
+  transform: translateY(-2px);
+}
+
