@@ -420,6 +420,18 @@
   font-weight: bold;
 }
 
+.priceBox {
+  border-color: #90EE90;
+}
+
+.priceBox .statLabel {
+  color: #90EE90;
+}
+
+.priceBox .statValue {
+  color: #90EE90;
+}
+
 .detailCards {
   margin-top: 2rem;
 }
@@ -433,8 +445,8 @@
 
 .detailCardItem {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 1rem;
+  align-items: flex-start;
   padding: 12px;
   margin-bottom: 0.5rem;
   background: var(--elegant-background);
@@ -446,6 +458,91 @@
 .detailCardItem:hover {
   border-color: var(--elegant-gold);
   transform: translateX(4px);
+}
+
+.cardThumbnail {
+  width: 80px;
+  height: auto;
+  border-radius: 4px;
+  border: 2px solid var(--elegant-border);
+  flex-shrink: 0;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cardText {
+  color: var(--elegant-muted);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0.5rem 0;
+}
+
+.powerToughness {
+  display: inline-block;
+  background: var(--elegant-panel);
+  border: 2px solid var(--elegant-gold);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: var(--elegant-gold);
+  margin-top: 0.5rem;
+}
+
+.cardPrice {
+  display: inline-block;
+  background: #90EE90;
+  color: var(--elegant-panel);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.buyLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.buyButton, .infoButton {
+  padding: 8px 16px !important;
+  border: 2px solid var(--elegant-gold) !important;
+  background: var(--elegant-panel) !important;
+  color: var(--elegant-accent) !important;
+  font-family: inherit !important;
+  font-size: 0.9rem !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  cursor: pointer !important;
+  border-radius: 4px !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  white-space: nowrap !important;
+}
+
+.buyButton:hover {
+  background: var(--elegant-gold) !important;
+  color: var(--elegant-panel) !important;
+  box-shadow: 0 4px 12px var(--elegant-shadow) !important;
+}
+
+.infoButton {
+  border-color: var(--elegant-border) !important;
+}
+
+.infoButton:hover {
+  border-color: var(--elegant-accent) !important;
+  background: var(--elegant-accent) !important;
+  color: var(--elegant-panel) !important;
 }
 
 .cardInfo {

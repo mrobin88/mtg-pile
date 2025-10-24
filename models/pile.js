@@ -9,30 +9,62 @@ const pileSchema = new mongoose.Schema({
   name: String,
   notes: String,
   cards: [{
+    // Core card data from Scryfall
+    id: String,
     name: String,
-    manaCost: String,
+    mana_cost: String,
     cmc: Number,
+    type_line: String,
+    oracle_text: String,
+    
+    // Colors and identity
     colors: [String],
-    colorIdentity: [String],
-    type: String,
-    supertypes: [String],
-    types: [String],
-    subtypes: [String],
-    rarity: String,
-    set: String,
-    setName: String,
-    flavor: String,
-    artist: String,
-    number: String,
+    color_identity: [String],
+    
+    // Card details
     power: String,
     toughness: String,
-    layout: String,
-    multiverseid: Number,
-    imageUrl: String,
-    rulings: [String],
-    printings: [String],
-    originalType: String,
-    id: String
+    loyalty: String,
+    
+    // Set information
+    set: String,
+    set_name: String,
+    collector_number: String,
+    rarity: String,
+    
+    // Artist and images
+    artist: String,
+    image_uris: {
+      small: String,
+      normal: String,
+      large: String,
+      png: String,
+      art_crop: String,
+      border_crop: String
+    },
+    
+    // Purchase links
+    purchase_uris: {
+      tcgplayer: String,
+      cardmarket: String,
+      cardhoarder: String
+    },
+    
+    // Prices
+    prices: {
+      usd: String,
+      usd_foil: String,
+      usd_etched: String,
+      eur: String,
+      eur_foil: String
+    },
+    
+    // Additional useful data
+    keywords: [String],
+    legalities: Schema.Types.Mixed,
+    released_at: String,
+    scryfall_uri: String,
+    tcgplayer_id: Number
   }]
 },
   {

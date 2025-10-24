@@ -277,6 +277,11 @@ const PileView = ({ user, currentPile, onPileUpdate }) => {
 
           {(() => {
             const stats = calculatePileStats(selectedPile.cards);
+            const totalPrice = selectedPile.cards.reduce((sum, card) => {
+              const price = parseFloat(card.prices?.usd || 0);
+              return sum + price;
+            }, 0);
+            
             return stats ? (
               <div className={styles.detailStats}>
                 <div className={styles.statBox}>
@@ -291,6 +296,12 @@ const PileView = ({ user, currentPile, onPileUpdate }) => {
                   <span className={styles.statLabel}>Colors</span>
                   <span className={styles.statValue}>{Object.keys(stats.colorCounts).length}</span>
                 </div>
+                {totalPrice > 0 && (
+                  <div className={`${styles.statBox} ${styles.priceBox}`}>
+                    <span className={styles.statLabel}>Est. Total</span>
+                    <span className={styles.statValue}>${totalPrice.toFixed(2)}</span>
+                  </div>
+                )}
               </div>
             ) : null;
           })()}
@@ -299,11 +310,57 @@ const PileView = ({ user, currentPile, onPileUpdate }) => {
             <h3>Cards in Pile</h3>
             {selectedPile.cards.map((card, index) => (
               <div key={index} className={styles.detailCardItem}>
+                {/* Card Image */}
+                {card.image_uris && (
+                  <img 
+                    src={card.image_uris.small || card.image_uris.normal} 
+                    alt={card.name}
+                    className={styles.cardThumbnail}
+                  />
+                )}
+                
                 <div className={styles.cardInfo}>
-                  <span className={styles.cardName}>{card.name}</span>
-                  <span className={styles.cardType}>{card.type}</span>
+                  <div className={styles.cardHeader}>
+                    <span className={styles.cardName}>{card.name}</span>
+                    {card.mana_cost && <ManaSymbol manaCost={card.mana_cost} size="small" />}
+                  </div>
+                  <span className={styles.cardType}>{card.type_line || card.type}</span>
+                  {card.oracle_text && (
+                    <p className={styles.cardText}>{card.oracle_text}</p>
+                  )}
+                  {card.power && card.toughness && (
+                    <span className={styles.powerToughness}>
+                      {card.power}/{card.toughness}
+                    </span>
+                  )}
+                  {card.prices?.usd && (
+                    <span className={styles.cardPrice}>${card.prices.usd}</span>
+                  )}
                 </div>
-                <ManaSymbol manaCost={card.manaCost} size="small" />
+
+                {/* Buy Links */}
+                <div className={styles.buyLinks}>
+                  {card.purchase_uris?.tcgplayer && (
+                    <a 
+                      href={card.purchase_uris.tcgplayer} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className={styles.buyButton}
+                    >
+                      🛒 TCGplayer
+                    </a>
+                  )}
+                  {card.scryfall_uri && (
+                    <a 
+                      href={card.scryfall_uri} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className={styles.infoButton}
+                    >
+                      ℹ️ Scryfall
+                    </a>
+                  )}
+                </div>
               </div>
             ))}
           </div>
