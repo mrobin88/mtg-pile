@@ -113,3 +113,14 @@ a:hover {
   color: var(--elegant-panel);
   box-shadow: 0 4px 12px var(--elegant-shadow);
 }
+
+.error-message {
+  color: #d4af37;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 8px;
+  border: 2px solid #d4af37;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 4px;
+}

@@ -28,7 +28,7 @@ app.get('/api/health', (req, res) => {
 
 // API routes
 app.use('/api/users', userRouter);
-app.use('/api/card', cardRouter);
+app.use('/api/pile', cardRouter);
 
 // Check if we're in production (build folder exists)
 const isProduction = process.env.NODE_ENV === 'production' || fs.existsSync(path.join(__dirname, 'build'));

@@ -95,6 +95,13 @@ function App() {
     setUser(userData);
   };
 
+  const handleSignupOrLogin = () => {
+    // Get user from token service
+    const userService = require('./utils/userService').default;
+    const userData = userService.getUser();
+    setUser(userData);
+  };
+
   const handleLogout = () => {
     setUser(null);
   };
@@ -104,8 +111,8 @@ function App() {
       <Nav user={user} handleLogout={handleLogout} />
       
       <Routes>
-        <Route path="/login" element={<LoginPage handleLogin={handleLogin} />} />
-        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage handleSignupOrLogin={handleSignupOrLogin} />} />
+        <Route path="/signup" element={<SignupPage handleSignupOrLogin={handleSignupOrLogin} />} />
         <Route path="/meta" element={<MetaAnalysis />} />
         <Route path="/players" element={<TopPlayers />} />
         <Route path="/test" element={<TestPage user={user} />} />
