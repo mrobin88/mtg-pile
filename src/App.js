@@ -81,6 +81,7 @@ function App() {
     console.log('Added to pile:', card.name);
   };
 
+  // eslint-disable-next-line no-unused-vars
   const handleRemoveFromPile = (cardName) => {
     setCurrentPile(currentPile.filter(c => c.name !== cardName));
     console.log('Removed from pile:', cardName);

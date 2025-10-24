@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import styles from './PileView.module.css';
 import pileService from '../../utils/pileService';
+// import pricingService from '../../utils/pricingService'; // TODO: Add pricing feature
 import ManaSymbol from '../ManaSymbol/ManaSymbol';
 
 const PileView = ({ user, currentPile, onPileUpdate }) => {
