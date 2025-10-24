@@ -162,6 +162,55 @@
   letter-spacing: 1px;
 }
 
+/* Card Actions */
+.cardActions {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cardContainer:hover .cardActions {
+  opacity: 1;
+}
+
+.actionBtn {
+  background: var(--elegant-panel);
+  color: var(--elegant-accent);
+  border: 2px solid var(--elegant-gold);
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actionBtn:hover {
+  background: var(--elegant-gold);
+  color: var(--elegant-panel);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px var(--elegant-shadow);
+}
+
+.actionBtn.inPile {
+  background: #90EE90;
+  border-color: #90EE90;
+  color: var(--elegant-panel);
+}
+
+.actionBtn.inPile:hover {
+  background: #7ED97E;
+  border-color: #7ED97E;
+}
+
 .loadingContainer {
   display: flex;
   flex-direction: column;

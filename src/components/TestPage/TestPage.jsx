@@ -1,15 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import styles from './TestPage.module.css';
 
-const TestPage = (props) => {
+// Local user state for decoupling demo purposes
+const getInitialUser = () => {
+  // Optionally, auto-login with a demo user for isolated testing, or leave as null
+  return null;
+};
+
+const TestPage = () => {
   const [healthStatus, setHealthStatus] = useState(null);
   const [loading, setLoading] = useState(true);
+  // Decoupled local user state for demo/testing, not relying on app
+  const [user, setUser] = useState(getInitialUser());
 
   useEffect(() => {
     checkHealth();
   }, []);
 
   const checkHealth = async () => {
+    setLoading(true);
     try {
       const response = await fetch('/api/health');
       const data = await response.json();
@@ -19,6 +28,18 @@ const TestPage = (props) => {
     } finally {
       setLoading(false);
     }
+  };
+
+  // Local authentication flow for isolated testing
+  const handleLogin = () => {
+    setUser({
+      name: 'Demo User',
+      email: 'demo@example.com'
+    });
+  };
+
+  const handleLogout = () => {
+    setUser(null);
   };
 
   return (
@@ -44,15 +65,21 @@ const TestPage = (props) => {
 
       <div className={styles.section}>
         <h2>User Authentication</h2>
-        {props.user ? (
+        {user ? (
           <div className={styles.success}>
-            <p>✅ Logged in as: <strong>{props.user.name}</strong></p>
-            <p>Email: <strong>{props.user.email}</strong></p>
+            <p>✅ Logged in as: <strong>{user.name}</strong></p>
+            <p>Email: <strong>{user.email}</strong></p>
+            <button className={styles.button} onClick={handleLogout}>
+              🚪 Logout
+            </button>
           </div>
         ) : (
           <div className={styles.warning}>
             <p>⚠️ Not logged in</p>
             <p>Please login or signup to test authentication</p>
+            <button className={styles.button} onClick={handleLogin}>
+              🔑 Login Demo User
+            </button>
           </div>
         )}
       </div>
@@ -76,4 +103,3 @@ const TestPage = (props) => {
 };
 
 export default TestPage;
-

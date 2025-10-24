@@ -12,6 +12,7 @@ import SignupPage from './SignupPage';
 import MetaAnalysis from './components/MetaAnalysis/MetaAnalysis';
 import TopPlayers from './components/TopPlayers/TopPlayers';
 import TestPage from './components/TestPage/TestPage';
+import PileView from './components/PileView/PileView';
 
 // Services
 import mtgService from './utils/mtgService';
@@ -23,6 +24,7 @@ function App() {
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(null);
+  const [currentPile, setCurrentPile] = useState([]);
 
   // Load initial cards (latest set)
   useEffect(() => {
@@ -67,6 +69,27 @@ function App() {
     console.log('Card clicked:', card);
   };
 
+  const handleAddToPile = (card) => {
+    // Check if card is already in pile
+    const isInPile = currentPile.some(c => c.name === card.name);
+    if (isInPile) {
+      console.log('Card already in pile:', card.name);
+      return;
+    }
+    
+    setCurrentPile([...currentPile, card]);
+    console.log('Added to pile:', card.name);
+  };
+
+  const handleRemoveFromPile = (cardName) => {
+    setCurrentPile(currentPile.filter(c => c.name !== cardName));
+    console.log('Removed from pile:', cardName);
+  };
+
+  const handlePileUpdate = (newPile) => {
+    setCurrentPile(newPile || []);
+  };
+
   const handleLogin = (userData) => {
     setUser(userData);
   };
@@ -85,6 +108,13 @@ function App() {
         <Route path="/meta" element={<MetaAnalysis />} />
         <Route path="/players" element={<TopPlayers />} />
         <Route path="/test" element={<TestPage user={user} />} />
+        <Route path="/piles" element={
+          <PileView 
+            user={user} 
+            currentPile={currentPile}
+            onPileUpdate={handlePileUpdate}
+          />
+        } />
         <Route path="/" element={
           <div className="main-content">
             <FilterBar 
@@ -96,6 +126,9 @@ function App() {
               <CardGrid 
                 cards={cards}
                 onCardClick={handleCardClick}
+                onAddToPile={handleAddToPile}
+                currentPile={currentPile}
+                user={user}
                 loading={loading}
               />
             </div>

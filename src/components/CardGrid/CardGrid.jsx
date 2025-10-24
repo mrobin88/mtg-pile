@@ -3,8 +3,12 @@ import styles from './CardGrid.module.css';
 import { toast } from 'react-toastify';
 import ManaSymbol from '../ManaSymbol/ManaSymbol';
 
-const CardGrid = ({ cards = [], onCardClick, loading = false }) => {
+const CardGrid = ({ cards = [], onCardClick, onAddToPile, currentPile = [], user, loading = false }) => {
   const [hoveredCard, setHoveredCard] = useState(null);
+
+  const isInPile = (cardName) => {
+    return currentPile.some(c => c.name === cardName);
+  };
 
   const handleCardHover = (cardId) => {
     setHoveredCard(cardId);
@@ -72,13 +76,23 @@ const CardGrid = ({ cards = [], onCardClick, loading = false }) => {
             {/* Quick Actions */}
             <div className={styles.cardActions}>
               <button 
-                className={styles.actionBtn}
+                className={`${styles.actionBtn} ${isInPile(card.name) ? styles.inPile : ''}`}
                 onClick={(e) => {
                   e.stopPropagation();
-                  toast.info(`Added ${card.name} to collection`);
+                  if (!user) {
+                    toast.error('Please login to add cards to your pile');
+                    return;
+                  }
+                  if (isInPile(card.name)) {
+                    toast.info(`${card.name} is already in your pile`);
+                  } else {
+                    onAddToPile(card);
+                    toast.success(`Added ${card.name} to pile!`);
+                  }
                 }}
+                title={isInPile(card.name) ? 'Already in pile' : 'Add to pile'}
               >
-                +
+                {isInPile(card.name) ? '✓' : '+'}
               </button>
             </div>
           </div>

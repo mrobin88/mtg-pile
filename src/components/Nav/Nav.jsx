@@ -12,6 +12,7 @@ const Nav = (props) => {
             <div className={styles.navLinks}>
               <Link style={{textDecoration: 'none' }} className="nav-link" to='/meta'>Meta Analysis</Link>
               <Link style={{textDecoration: 'none' }} className="nav-link" to='/players'>Top Players</Link>
+              <Link style={{textDecoration: 'none' }} className="nav-link" to='/piles'>📚 My Piles</Link>
               <Link style={{textDecoration: 'none' }} className="nav-link" to='/test'>🧪 Test</Link>
               {props.user ? (
                 <>
